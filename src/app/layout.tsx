@@ -18,6 +18,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -97,6 +98,7 @@ export default function RootLayout({
           </P>
         </footer>
       </body>
+      <GoogleAnalytics gaId="G-X7QPXWTBCQ" />
     </html>
   );
 }
