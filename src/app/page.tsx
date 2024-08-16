@@ -166,7 +166,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="container flex flex-col py-32 [&_a:hover]:underline [&_blockquote]:text-lg [&_h2]:mt-12 [&_li]:text-lg [&_p]:text-justify [&_p]:text-lg [&_p]:first-letter:pl-12 [&_p]:first-letter:font-bold">
+    <main className="container flex flex-col py-20 [&_a:hover]:underline [&_blockquote]:text-lg [&_h2]:mt-12 [&_li]:text-lg [&_p]:text-justify [&_p]:text-lg [&_p]:first-letter:pl-12 [&_p]:first-letter:font-bold">
       <H1 className={"px-6 text-center"}>
         Octroi de Mer à la Réunion : un outil pour la calculer facilement
       </H1>
@@ -261,7 +261,7 @@ export default function Home() {
         régionaux qui fixent les taux d'octroi de mer ainsi que les produits qui
         font l'objet d'exonérations.
       </P>
-      <H2>
+      <H2 id={"taux-reunion"}>
         Taux d'octroi de mer applicable à la Réunion en{" "}
         {dayjs().locale("fr").format("MMMM YYYY")}
       </H2>
@@ -351,7 +351,7 @@ export default function Home() {
       {/*<H3>Ordinateur portable</H3>*/}
       {/*<H3>Véhicule</H3>*/}
       {/*<H3>Pièces détachés automobile</H3>*/}
-      <H2>Calculateur octroi de mer</H2>
+      <H2 id={"calculateur"}>Calculateur octroi de mer</H2>
       <Table>
         <TableHeader>
           <TableRow>
@@ -379,7 +379,7 @@ export default function Home() {
             return (
               <TableRow key={entry.index}>
                 <TableCell className={"text-center"}>{entry.index}</TableCell>
-                <TableCell className={"max-w-prose text-center"}>
+                <TableCell className={"line-clamp-3 max-w-prose text-center"}>
                   {entry.designation}
                 </TableCell>
                 <TableCell className={"text-center"}>
@@ -426,7 +426,11 @@ export default function Home() {
           </Button>
         </DialogTrigger>
 
-        <DialogContent className={"flex flex-col"}>
+        <DialogContent
+          className={
+            "flex h-screen w-screen flex-col overflow-y-scroll lg:h-auto lg:w-auto"
+          }
+        >
           <DialogHeader>
             <DialogTitle>Ajout d'article</DialogTitle>
             <DialogDescription>
@@ -446,7 +450,7 @@ export default function Home() {
               <SelectValue />
             </SelectTrigger>
 
-            <SelectContent>
+            <SelectContent className={"w-[90vw] lg:w-auto"}>
               <SelectGroup>
                 {rates.map((rate) =>
                   rate.label ? (
@@ -477,7 +481,7 @@ export default function Home() {
                 <SelectValue />
               </SelectTrigger>
 
-              <SelectContent>
+              <SelectContent className={"w-[90vw] lg:w-auto"}>
                 <SelectGroup>
                   {category.exceptions.map((rate) =>
                     rate.label ? (
