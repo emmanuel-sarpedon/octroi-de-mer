@@ -54,7 +54,7 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { H1, H2, H3, InlineCode, List, P, Quote } from "shadcn-typography";
+import { H1, H2, InlineCode, List, P, Quote } from "shadcn-typography";
 import { Separator } from "@/components/ui/separator";
 import {
   AlertDialog,
@@ -428,7 +428,7 @@ export default function Home() {
 
         <DialogContent
           className={
-            "flex h-screen w-screen flex-col overflow-y-scroll lg:h-auto lg:w-auto"
+            "flex h-dvh w-screen flex-col overflow-y-scroll lg:h-auto lg:w-auto pt-12"
           }
         >
           <DialogHeader>
